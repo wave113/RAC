@@ -105,6 +105,7 @@
 		716B096E1F459C900007F2DB /* VCMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 716B096D1F459C900007F2DB /* VCMenu.m */; };
 		716B09741F459EC30007F2DB /* VCSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 716B09731F459EC30007F2DB /* VCSignal.m */; };
 		716B09781F45A1310007F2DB /* VCBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 716B09771F45A1310007F2DB /* VCBase.m */; };
+		716CD7611F46D7CE00AFF199 /* VCSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 716CD7601F46D7CE00AFF199 /* VCSubject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -311,6 +312,8 @@
 		716B09731F459EC30007F2DB /* VCSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCSignal.m; sourceTree = "<group>"; };
 		716B09761F45A1310007F2DB /* VCBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCBase.h; sourceTree = "<group>"; };
 		716B09771F45A1310007F2DB /* VCBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCBase.m; sourceTree = "<group>"; };
+		716CD75F1F46D7CE00AFF199 /* VCSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCSubject.h; sourceTree = "<group>"; };
+		716CD7601F46D7CE00AFF199 /* VCSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCSubject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -576,6 +579,8 @@
 				716B096D1F459C900007F2DB /* VCMenu.m */,
 				716B09721F459EC30007F2DB /* VCSignal.h */,
 				716B09731F459EC30007F2DB /* VCSignal.m */,
+				716CD75F1F46D7CE00AFF199 /* VCSubject.h */,
+				716CD7601F46D7CE00AFF199 /* VCSubject.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -661,6 +666,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				716B092B1F457D3D0007F2DB /* RACSequence.m in Sources */,
+				716CD7611F46D7CE00AFF199 /* VCSubject.m in Sources */,
 				716B090D1F457D3C0007F2DB /* RACArraySequence.m in Sources */,
 				716B09391F457D3D0007F2DB /* RACTuple.m in Sources */,
 				716B09251F457D3D0007F2DB /* RACPassthroughSubscriber.m in Sources */,
@@ -803,6 +809,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -848,6 +855,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -866,6 +874,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3KR2278N62;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = RAC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -879,6 +888,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3KR2278N62;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = RAC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -906,6 +916,7 @@
 				716B08351F457C970007F2DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

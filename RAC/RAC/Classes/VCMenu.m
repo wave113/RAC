@@ -8,6 +8,7 @@
 
 #import "VCMenu.h"
 #import "VCSignal.h"
+#import "VCSubject.h"
 
 @interface VCMenu ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -30,7 +31,8 @@
     if (_dataArray == nil) {
         
         NSArray * array = @[
-                            NSStringFromClass([VCSignal class])
+                            NSStringFromClass([VCSignal class]),
+                            NSStringFromClass([VCSubject class])
                             ];
         
         _dataArray = array;
