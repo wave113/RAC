@@ -106,6 +106,7 @@
 		716B09741F459EC30007F2DB /* VCSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 716B09731F459EC30007F2DB /* VCSignal.m */; };
 		716B09781F45A1310007F2DB /* VCBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 716B09771F45A1310007F2DB /* VCBase.m */; };
 		716CD7611F46D7CE00AFF199 /* VCSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 716CD7601F46D7CE00AFF199 /* VCSubject.m */; };
+		716CD7661F46F40400AFF199 /* VCRACCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 716CD7651F46F40400AFF199 /* VCRACCommand.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -314,6 +315,8 @@
 		716B09771F45A1310007F2DB /* VCBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCBase.m; sourceTree = "<group>"; };
 		716CD75F1F46D7CE00AFF199 /* VCSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCSubject.h; sourceTree = "<group>"; };
 		716CD7601F46D7CE00AFF199 /* VCSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCSubject.m; sourceTree = "<group>"; };
+		716CD7641F46F40400AFF199 /* VCRACCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCRACCommand.h; sourceTree = "<group>"; };
+		716CD7651F46F40400AFF199 /* VCRACCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCRACCommand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -581,6 +584,8 @@
 				716B09731F459EC30007F2DB /* VCSignal.m */,
 				716CD75F1F46D7CE00AFF199 /* VCSubject.h */,
 				716CD7601F46D7CE00AFF199 /* VCSubject.m */,
+				716CD7641F46F40400AFF199 /* VCRACCommand.h */,
+				716CD7651F46F40400AFF199 /* VCRACCommand.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -758,6 +763,7 @@
 				716B09421F457D3D0007F2DB /* UICollectionReusableView+RACSignalSupport.m in Sources */,
 				716B09461F457D3D0007F2DB /* UIGestureRecognizer+RACSignalSupport.m in Sources */,
 				716B09381F457D3D0007F2DB /* RACTestScheduler.m in Sources */,
+				716CD7661F46F40400AFF199 /* VCRACCommand.m in Sources */,
 				716B093E1F457D3D0007F2DB /* UIActionSheet+RACSignalSupport.m in Sources */,
 				716B091C1F457D3D0007F2DB /* RACEvent.m in Sources */,
 				716B09051F457D3C0007F2DB /* NSObject+RACSelectorSignal.m in Sources */,
