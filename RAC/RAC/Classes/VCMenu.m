@@ -9,6 +9,7 @@
 #import "VCMenu.h"
 #import "VCSignal.h"
 #import "VCSubject.h"
+#import "VCRACCommand.h"
 
 @interface VCMenu ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -32,7 +33,8 @@
         
         NSArray * array = @[
                             NSStringFromClass([VCSignal class]),
-                            NSStringFromClass([VCSubject class])
+                            NSStringFromClass([VCSubject class]),
+                            NSStringFromClass([VCRACCommand class])
                             ];
         
         _dataArray = array;
@@ -73,6 +75,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     NSString * className = self.dataArray[indexPath.row];
     UIViewController * viewController = [NSClassFromString(className) new];
+    viewController.title = className;
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
