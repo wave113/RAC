@@ -10,6 +10,7 @@
 #import "VCSignal.h"
 #import "VCSubject.h"
 #import "VCRACCommand.h"
+#import "VCRACScheduler.h"
 
 @interface VCMenu ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -34,7 +35,8 @@
         NSArray * array = @[
                             NSStringFromClass([VCSignal class]),
                             NSStringFromClass([VCSubject class]),
-                            NSStringFromClass([VCRACCommand class])
+                            NSStringFromClass([VCRACCommand class]),
+                            NSStringFromClass([VCRACScheduler class])
                             ];
         
         _dataArray = array;
@@ -67,7 +69,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
     cell.accessoryType    = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text   = self.dataArray[indexPath.row];
+    cell.textLabel.text   = [self.dataArray[indexPath.row] substringFromIndex:2];
     return cell;
 }
 
@@ -75,7 +77,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     NSString * className = self.dataArray[indexPath.row];
     UIViewController * viewController = [NSClassFromString(className) new];
-    viewController.title = className;
+    viewController.title = [className substringFromIndex:2];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

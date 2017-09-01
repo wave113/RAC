@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		715EA58B1F5830DA00369D1B /* VCRACScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EA58A1F5830DA00369D1B /* VCRACScheduler.m */; };
 		716B08211F457C960007F2DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 716B08201F457C960007F2DB /* main.m */; };
 		716B08241F457C960007F2DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 716B08231F457C960007F2DB /* AppDelegate.m */; };
 		716B082C1F457C970007F2DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716B082B1F457C970007F2DB /* Assets.xcassets */; };
@@ -110,6 +111,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		715EA5891F5830DA00369D1B /* VCRACScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCRACScheduler.h; sourceTree = "<group>"; };
+		715EA58A1F5830DA00369D1B /* VCRACScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCRACScheduler.m; sourceTree = "<group>"; };
 		716B081C1F457C960007F2DB /* RAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		716B08201F457C960007F2DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		716B08221F457C960007F2DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -586,6 +589,8 @@
 				716CD7601F46D7CE00AFF199 /* VCSubject.m */,
 				716CD7641F46F40400AFF199 /* VCRACCommand.h */,
 				716CD7651F46F40400AFF199 /* VCRACCommand.m */,
+				715EA5891F5830DA00369D1B /* VCRACScheduler.h */,
+				715EA58A1F5830DA00369D1B /* VCRACScheduler.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -726,6 +731,7 @@
 				716B09151F457D3C0007F2DB /* RACDisposable.m in Sources */,
 				716B09071F457D3C0007F2DB /* NSSet+RACSequenceAdditions.m in Sources */,
 				716B093B1F457D3D0007F2DB /* RACUnarySequence.m in Sources */,
+				715EA58B1F5830DA00369D1B /* VCRACScheduler.m in Sources */,
 				716B09781F45A1310007F2DB /* VCBase.m in Sources */,
 				716B08F61F457D3C0007F2DB /* RACEXTRuntimeExtensions.m in Sources */,
 				716B09121F457D3C0007F2DB /* RACCompoundDisposable.m in Sources */,

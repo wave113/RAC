@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReactiveCocoa.h"
+#import "RACEXTScope.h"
 
 @interface VCBase : UIViewController
 
