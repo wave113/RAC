@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		715D9CB11F593A6700A6E156 /* VCHotAndColdSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 715D9CB01F593A6700A6E156 /* VCHotAndColdSignal.m */; };
 		715EA58B1F5830DA00369D1B /* VCRACScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EA58A1F5830DA00369D1B /* VCRACScheduler.m */; };
 		716B08211F457C960007F2DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 716B08201F457C960007F2DB /* main.m */; };
 		716B08241F457C960007F2DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 716B08231F457C960007F2DB /* AppDelegate.m */; };
@@ -111,6 +112,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		715D9CAF1F593A6600A6E156 /* VCHotAndColdSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCHotAndColdSignal.h; sourceTree = "<group>"; };
+		715D9CB01F593A6700A6E156 /* VCHotAndColdSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCHotAndColdSignal.m; sourceTree = "<group>"; };
 		715EA5891F5830DA00369D1B /* VCRACScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCRACScheduler.h; sourceTree = "<group>"; };
 		715EA58A1F5830DA00369D1B /* VCRACScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCRACScheduler.m; sourceTree = "<group>"; };
 		716B081C1F457C960007F2DB /* RAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -591,6 +594,8 @@
 				716CD7651F46F40400AFF199 /* VCRACCommand.m */,
 				715EA5891F5830DA00369D1B /* VCRACScheduler.h */,
 				715EA58A1F5830DA00369D1B /* VCRACScheduler.m */,
+				715D9CAF1F593A6600A6E156 /* VCHotAndColdSignal.h */,
+				715D9CB01F593A6700A6E156 /* VCHotAndColdSignal.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -685,6 +690,7 @@
 				716B09401F457D3D0007F2DB /* UIBarButtonItem+RACCommandSupport.m in Sources */,
 				716B09281F457D3D0007F2DB /* RACReturnSignal.m in Sources */,
 				716B09201F457D3D0007F2DB /* RACKVOChannel.m in Sources */,
+				715D9CB11F593A6700A6E156 /* VCHotAndColdSignal.m in Sources */,
 				716B092E1F457D3D0007F2DB /* RACSignal.m in Sources */,
 				716B08FB1F457D3C0007F2DB /* NSEnumerator+RACSequenceAdditions.m in Sources */,
 				716B09501F457D3D0007F2DB /* UITextView+RACSignalSupport.m in Sources */,

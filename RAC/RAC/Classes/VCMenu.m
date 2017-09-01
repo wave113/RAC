@@ -11,6 +11,7 @@
 #import "VCSubject.h"
 #import "VCRACCommand.h"
 #import "VCRACScheduler.h"
+#import "VCHotAndColdSignal.h"
 
 @interface VCMenu ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -36,7 +37,8 @@
                             NSStringFromClass([VCSignal class]),
                             NSStringFromClass([VCSubject class]),
                             NSStringFromClass([VCRACCommand class]),
-                            NSStringFromClass([VCRACScheduler class])
+                            NSStringFromClass([VCRACScheduler class]),
+                            NSStringFromClass([VCHotAndColdSignal class])
                             ];
         
         _dataArray = array;
