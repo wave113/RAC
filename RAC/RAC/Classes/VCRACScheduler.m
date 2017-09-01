@@ -27,12 +27,16 @@
     
     //[self asycSendAndSycSendWithAsycSubcribe];
     
-    [self deliverOnThread];
+    //[self deliverOnThread];
+    
+    [self subscribeOnThread];
 }
 
 /*
     RACScheduler在ReactiveCocoa中是用来控制一个任务，何时何地被执行。它主要是用来解决ReactiveCocoa中并发编程的问题的。
     RACScheduler的实质是对GCD的封装，底层使用GCD实现。
+ 
+    虽然RACScheduler可以方便的控制线程转换及线程间通信操作,使用方法也很简单,但要注意信号的发送和订阅所在的线程,根据实际情况使用subscribeOn:和deliverOn:
  
  */
 
@@ -235,8 +239,8 @@
      
      */
 }
-// 由于发送信号操作所在线程会影响订阅信号操作执行行为所在线程,所以就有了在订阅信号时,可以指定线程的需求,deliverOn由此而来
-// 指定订阅信号操作的执行线程
+// 由于发送信号操作所在线程会影响订阅信号操作执行行为所在线程,所以就有了在订阅信号或发送信号时,可以指定线程的需求,deliverOn和subscribeOn由此而来
+// 发送时机不确定时 —> deliverOn:
 - (void)deliverOnThread {
  
     RACSignal * signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
@@ -253,7 +257,7 @@
         return disposable;
     }];
     
-    // 1.模拟在子线程中回到主线程执行操作
+    // 模拟在子线程中指定回到主线程执行操作
     [[RACScheduler scheduler] schedule:^{
         NSLog(@"3333-当前线程:%@",[NSThread currentThread]);
         [[signal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
@@ -263,28 +267,54 @@
         }];
     }];
     
-    // 2.指定主线程执行订阅后操作
-    NSLog(@"5555-当前线程:%@",[NSThread currentThread]);
-    [[signal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
-        
-        // 指定在主线程中执行订阅信号后的操作
-        NSLog(@"6666-当前线程:%@ 信号值:%@",[NSThread currentThread],x);
-        
-    }];
-    
     /*
-     5555-当前线程:<NSThread: 0x60800007da40>{number = 1, name = main}
-     3333-当前线程:<NSThread: 0x608000271780>{number = 3, name = (null)}
-     1111-当前线程:<NSThread: 0x608000271780>{number = 3, name = (null)}
-     1111-当前线程:<NSThread: 0x60800007da40>{number = 1, name = main}
-     2222-当前线程:<NSThread: 0x608000271780>{number = 3, name = (null)}
-     2222-当前线程:<NSThread: 0x600000278180>{number = 4, name = (null)}
-     4444-当前线程:<NSThread: 0x60800007da40>{number = 1, name = main} 信号值:1111
-     6666-当前线程:<NSThread: 0x60800007da40>{number = 1, name = main} 信号值:1111
-     4444-当前线程:<NSThread: 0x60800007da40>{number = 1, name = main} 信号值:2222
-     6666-当前线程:<NSThread: 0x60800007da40>{number = 1, name = main} 信号值:2222
+     3333-当前线程:<NSThread: 0x608000264680>{number = 3, name = (null)}
+     1111-当前线程:<NSThread: 0x608000264680>{number = 3, name = (null)}
+     2222-当前线程:<NSThread: 0x608000264680>{number = 3, name = (null)}
+     4444-当前线程:<NSThread: 0x608000072f80>{number = 1, name = main} 信号值:1111
+     4444-当前线程:<NSThread: 0x608000072f80>{number = 1, name = main} 信号值:2222
      */
     
+    /*
+      deliverOn可以指定订阅信号的block处理操作在指定线程中执行 当然,如果block内部再做的异步处理,那肯定就有异步子线程处理了
+     */
+}
+// subscribeOn 订阅时机不确定时 —> subscribeOn:
+- (void)subscribeOnThread {
+    RACSignal * signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        
+        NSLog(@"1111-当前线程:%@",[NSThread currentThread]);
+        [subscriber sendNext:@"1111"];
+        
+        RACDisposable * disposable = [[RACScheduler scheduler] schedule:^{
+            
+            NSLog(@"2222-当前线程:%@",[NSThread currentThread]);
+            
+            [subscriber sendNext:@"2222"];
+        }];
+        return disposable;
+    }];
+    
+    [[RACScheduler scheduler] schedule:^{
+        NSLog(@"3333-当前线程:%@",[NSThread currentThread]);
+        [[signal subscribeOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+            
+            NSLog(@"4444-当前线程:%@ 信号值:%@",[NSThread currentThread],x);
+        
+        }];
+    }];
+
+    /*
+     3333-当前线程:<NSThread: 0x6000002778c0>{number = 3, name = (null)}
+     1111-当前线程:<NSThread: 0x6000002614c0>{number = 1, name = main}
+     4444-当前线程:<NSThread: 0x6000002614c0>{number = 1, name = main} 信号值:1111
+     2222-当前线程:<NSThread: 0x600000278180>{number = 4, name = (null)}
+     4444-当前线程:<NSThread: 0x600000278180>{number = 4, name = (null)} 信号值:2222
+     */
+    
+    /*
+     使用subscribeOn可以让信号signal内的代码在指定线程中执行
+     */
 }
 
 @end
